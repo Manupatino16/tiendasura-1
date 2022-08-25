@@ -15,6 +15,7 @@ if(JSON.parse(localStorage.getItem("carrito"))!=null){
 let carritoMemoria=JSON.parse(localStorage.getItem("carrito"))
 console.log(carritoMemoria);
 
+
 //referenciar la imagen del producto
 let foto=document.getElementById("imagenInfo")
 foto.src=producto.foto
@@ -26,6 +27,13 @@ nombre.textContent=producto.nombre
 //referenciar la descripcion del producto
 let descripcion=document.getElementById("descripcionInfo")
 descripcion.textContent=producto.descripcion
+
+let contenedorEstrellas=document.getElementById("contenedorEstrellas")
+for(let i=1; i<=producto.popularidad;i++){
+    let estrella=document.createElement("i")
+    estrella.classList.add("bi","bi-star-fill","p-1")
+    contenedorEstrellas.appendChild(estrella)
+}
 
 //referenciar el precio del producto
 let precio=document.getElementById("precioInfo")
